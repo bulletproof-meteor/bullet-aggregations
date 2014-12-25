@@ -1,9 +1,9 @@
 var lastComment = Comments.findOne({}, {
-  $sort: {created: -1},
+  $sort: {created: 1},
   $limit: 1
 });
 
-if(!lastComment || isOldThanADay(lastComment)) {
+if(!lastComment || isOldThanAWeek(lastComment)) {
   Comments.remove({});
   var sevenDaysTime = 1000 * 3600 * 24 * 7;
   var beforeSevenDays = new Date(Date.now() - sevenDaysTime);
@@ -21,8 +21,7 @@ if(!lastComment || isOldThanADay(lastComment)) {
   console.log("completed!");
 }
 
-
-function isOldThanADay (comment) {
+function isOldThanAWeek (comment) {
   var diff = Date.now() - comment.created.getTime();
-  return diff > 1000 * 3600 * 24;
+  return diff > 1000 * 3600 * 24 * 7;
 }
