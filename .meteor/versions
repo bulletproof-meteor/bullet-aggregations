@@ -35,7 +35,7 @@ localstorage@1.0.5
 logging@1.0.8
 meteor@1.1.9
 meteor-base@1.0.1
-meteorhacks:kadira@2.23.6
+meteorhacks:kadira@2.24.0
 meteorhacks:kadira-binary-deps@1.4.0
 meteorhacks:kadira-profiler@1.2.1
 meteorhacks:meteorx@1.4.1
